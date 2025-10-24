@@ -1,4 +1,4 @@
 *.xml
 /venv/
 /.idea
-/backend/.env
+backend/.env
