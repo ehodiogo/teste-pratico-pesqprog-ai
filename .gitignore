@@ -2,3 +2,4 @@
 /venv/
 /.idea
 backend/.env
+*.pyc
