@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'agent',
     'article',
-    'crewai_tools',
     'corsheaders',
 ]
 

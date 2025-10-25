@@ -1,9 +1,10 @@
-from rest_framework.routers import DefaultRouter
-# from .views import ArticleViewSet
+from django.urls import path
+from .views import WikipediaCrewAPIView, ArticleListAPIView, ArticleDetailAPIView
 
-app_name = "agent"
+app_name = "articles"
 
-router = DefaultRouter()
-#router.register(r"articles", ArticleViewSet, basename="article")
-
-urlpatterns = router.urls
+urlpatterns = [
+    path("articles/", WikipediaCrewAPIView.as_view(), name="articles-create"),
+    path("articles/list/", ArticleListAPIView.as_view(), name="articles-list"),
+    path("articles/<int:pk>/", ArticleDetailAPIView.as_view(), name="articles-detail"),
+]
