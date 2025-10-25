@@ -48,7 +48,7 @@ function ArticleDetail() {
   const sectionStyle = "card mb-4 shadow-sm";
   const textBoxStyle = "p-3 bg-light rounded border overflow-auto";
 
-    return (
+  return (
     <div className="container mt-5">
       <Link to="/articles" className="btn btn-secondary mb-4">
         ← Voltar para a lista
@@ -56,23 +56,27 @@ function ArticleDetail() {
 
       <h2 className="mb-4">{article.title}</h2>
 
-      <div className={sectionStyle}>
-        <div className="card-body">
-          <h5 className="card-title">
-            Resumo <small className="text-muted">({countWords(article.summary)} palavras)</small>
-          </h5>
-          <pre className={textBoxStyle} style={{ maxHeight: "200px" }}>{article.summary}</pre>
+      {article.summary && (
+        <div className={sectionStyle}>
+          <div className="card-body">
+            <h5 className="card-title">
+              Resumo <small className="text-muted">({countWords(article.summary)} palavras)</small>
+            </h5>
+            <pre className={textBoxStyle} style={{ maxHeight: "200px" }}>{article.summary}</pre>
+          </div>
         </div>
-      </div>
+      )}
 
-      <div className={sectionStyle}>
-        <div className="card-body">
-          <h5 className="card-title">
-            Artigo <small className="text-muted">({countWords(article.article)} palavras)</small>
-          </h5>
-          <pre className={textBoxStyle} style={{ maxHeight: "400px" }}>{article.article}</pre>
+      {article.article && (
+        <div className={sectionStyle}>
+          <div className="card-body">
+            <h5 className="card-title">
+              Artigo <small className="text-muted">({countWords(article.article)} palavras)</small>
+            </h5>
+            <pre className={textBoxStyle} style={{ maxHeight: "400px" }}>{article.article}</pre>
+          </div>
         </div>
-      </div>
+      )}
 
       {article.translation && (
         <div className={sectionStyle}>
@@ -90,6 +94,33 @@ function ArticleDetail() {
           <div className="card-body">
             <h5 className="card-title">Sentimento</h5>
             <pre className={textBoxStyle}>{article.sentiment}</pre>
+          </div>
+        </div>
+      )}
+
+      {article.fact_check && (
+        <div className={sectionStyle}>
+          <div className="card-body">
+            <h5 className="card-title">Verificação de Fatos</h5>
+            <pre className={textBoxStyle} style={{ maxHeight: "200px" }}>{article.fact_check}</pre>
+          </div>
+        </div>
+      )}
+
+      {article.review && (
+        <div className={sectionStyle}>
+          <div className="card-body">
+            <h5 className="card-title">Feedback do Revisor</h5>
+            <pre className={textBoxStyle} style={{ maxHeight: "200px" }}>{article.review}</pre>
+          </div>
+        </div>
+      )}
+
+      {article.category && (
+        <div className={sectionStyle}>
+          <div className="card-body">
+            <h5 className="card-title">Categoria do Artigo</h5>
+            <pre className={textBoxStyle}>{article.category}</pre>
           </div>
         </div>
       )}

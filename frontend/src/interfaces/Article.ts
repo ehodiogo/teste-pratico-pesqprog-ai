@@ -13,4 +13,7 @@ export interface Article {
     translation?: string;
     quiz?: QuizQuestion[];
     sentiment: string;
+    fact_check?: string;
+    review?: string;
+    category?: string;
 }

@@ -77,23 +77,33 @@ function Generate() {
           <div className="card-body">
             <h4 className="card-title">{article.title}</h4>
 
-            <div className="mb-3">
-              <h5>Resumo:</h5>
-              <pre className={codeBlockStyle} style={{ maxHeight: "200px" }}>{article.summary}</pre>
-            </div>
+            {article.summary && (
+              <div className="mb-3">
+                <h5>Resumo:</h5>
+                <pre className={codeBlockStyle} style={{ maxHeight: "200px" }}>
+                  {article.summary}
+                </pre>
+              </div>
+            )}
 
-            <div className="mb-3">
-              <h5>Artigo:</h5>
-              <pre className={codeBlockStyle} style={{ maxHeight: "400px" }}>{article.article}</pre>
-              <p className="text-end text-muted mt-1">
-                Palavras: {article.article.split(/\s+/).filter(Boolean).length}
-              </p>
-            </div>
+            {article.article && (
+              <div className="mb-3">
+                <h5>Artigo:</h5>
+                <pre className={codeBlockStyle} style={{ maxHeight: "400px" }}>
+                  {article.article}
+                </pre>
+                <p className="text-end text-muted mt-1">
+                  Palavras: {article.article.split(/\s+/).filter(Boolean).length}
+                </p>
+              </div>
+            )}
 
             {article.translation && (
               <div className="mb-3">
                 <h5>Tradução:</h5>
-                <pre className={codeBlockStyle} style={{ maxHeight: "400px" }}>{article.translation}</pre>
+                <pre className={codeBlockStyle} style={{ maxHeight: "400px" }}>
+                  {article.translation}
+                </pre>
               </div>
             )}
 
@@ -101,6 +111,31 @@ function Generate() {
               <div className="mb-3">
                 <h5>Sentimento:</h5>
                 <pre className={codeBlockStyle}>{article.sentiment}</pre>
+              </div>
+            )}
+
+            {article.fact_check && (
+              <div className="mb-3">
+                <h5>Verificação de Fatos:</h5>
+                <pre className={codeBlockStyle} style={{ maxHeight: "200px" }}>
+                  {article.fact_check}
+                </pre>
+              </div>
+            )}
+
+            {article.review && (
+              <div className="mb-3">
+                <h5>Feedback do Revisor:</h5>
+                <pre className={codeBlockStyle} style={{ maxHeight: "200px" }}>
+                  {article.review}
+                </pre>
+              </div>
+            )}
+
+            {article.category && (
+              <div className="mb-3">
+                <h5>Categoria do Artigo:</h5>
+                <pre className={codeBlockStyle}>{article.category}</pre>
               </div>
             )}
 

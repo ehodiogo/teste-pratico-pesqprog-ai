@@ -28,6 +28,9 @@ class WikipediaCrewAPIView(APIView):
                 sentiment=result.sentiment,
                 translation=result.translation,
                 quiz=[q.dict() for q in result.quiz],
+                fact_check=getattr(result, "fact_check", None),
+                review=getattr(result, "review", None),
+                category=getattr(result, "category", None),
             )
 
             serializer = ArticleSerializer(article)

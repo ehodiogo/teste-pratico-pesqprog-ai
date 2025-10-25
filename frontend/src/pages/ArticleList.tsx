@@ -30,6 +30,8 @@ function Articles() {
     navigate(`/articles/${id}`);
   };
 
+  const countWords = (text?: string) => text ? text.trim().split(/\s+/).length : 0;
+
   return (
     <div className="container mt-5">
       <h2 className="mb-4 text-center">Lista de Artigos</h2>
@@ -48,12 +50,15 @@ function Articles() {
         {articles.map((a: Article) => (
           <div key={a.id} className="col-md-6">
             <div className="card shadow-sm h-100">
-              <div className="card-body">
+              <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{a.title}</h5>
-                <p className="card-text" style={{ whiteSpace: 'pre-line' }}>{a.summary}</p>
-                <p className="text-muted"><b>Fonte:</b> {a.source}</p>
+                {a.category && <p className="text-muted mb-1"><b>Categoria:</b> {a.category}</p>}
+                {a.summary && <p className="card-text mb-2" style={{ whiteSpace: 'pre-line' }}>{a.summary}</p>}
+                <p className="text-muted mb-2"><b>Fonte:</b> {a.source}</p>
+                {a.article && <p className="text-muted mb-3"><b>Palavras no artigo:</b> {countWords(a.article)}</p>}
+
                 <button
-                  className="btn btn-primary mt-2"
+                  className="btn btn-primary mt-auto"
                   onClick={() => handleViewArticle(a.id)}
                 >
                   Ver Artigo Completo

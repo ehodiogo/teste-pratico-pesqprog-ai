@@ -3,4 +3,4 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-llm = LLM(model="gpt-4o-mini")
+llm = LLM(model="gpt-4o-mini", temperature=0.3)
