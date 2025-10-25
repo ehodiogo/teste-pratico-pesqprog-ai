@@ -19,6 +19,10 @@ function Home() {
                 <h5 className="card-title fw-bold mb-3">Funcionalidades</h5>
                 <ul className="list-unstyled mb-0">
                   <li className="mb-2">✅ Geração automática de artigos com mínimo de 300 palavras</li>
+                  <li className="mb-2">✅ Tradução automática do artigo para inglês (EN-US)</li>
+                  <li className="mb-2">✅ Avaliação do sentimento do artigo </li>
+                  <li className="mb-2">✅ Sumarização automática do artigo gerado em português (PT-BR)</li>
+                  <li className="mb-2">✅ Geração automática de quiz com 5 perguntas a partir do artigo gerado em português (PT-BR)</li>
                   <li className="mb-2">✅ Utiliza agentes CrewAI para pesquisa e escrita</li>
                   <li className="mb-2">✅ Consulta a Wikipedia para informações confiáveis</li>
                   <li className="mb-2">✅ Saída formatada usando Pydantic</li>
@@ -34,8 +38,8 @@ function Home() {
                 <h5 className="card-title fw-bold mb-3">Tecnologias Utilizadas</h5>
                 <ul className="list-unstyled mb-0">
                   <li className="mb-2">💻 <b>Backend:</b> Django + DRF</li>
-                  <li className="mb-2">🤖 <b>Multiagentes:</b> CrewAI + Crewai-tools</li>
-                  <li className="mb-2">🧠 <b>LLMs:</b> GPT 4-o</li>
+                  <li className="mb-2">🤖 <b>Multiagentes:</b> CrewAI + CrewAI-tools + LangChain</li>
+                  <li className="mb-2">🧠 <b>LLMs:</b> GPT 4-o-mini</li>
                   <li className="mb-2">📚 <b>Dados:</b> API da Wikipedia</li>
                   <li className="mb-2">⚛️ <b>Frontend:</b> React + Vite + Bootstrap</li>
                   <li className="mb-2">🎨 <b>Estilização:</b> Bootstrap 5</li>
@@ -56,11 +60,6 @@ function Home() {
             </ul>
           </div>
         </div>
-
-        <footer className="text-center mt-5 mb-3 text-muted">
-          &copy; 2025 - Projeto de Demonstração
-        </footer>
-
       </div>
     </div>
   );
