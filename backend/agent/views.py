@@ -7,6 +7,9 @@ from article.serializers import ArticleSerializer
 from rest_framework.renderers import JSONRenderer
 
 class WikipediaCrewAPIView(APIView):
+    """
+    API para fazer a criação do artigo
+    """
     renderer_classes = [JSONRenderer]
 
     def post(self, request):
@@ -40,6 +43,9 @@ class WikipediaCrewAPIView(APIView):
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class ArticleListAPIView(APIView):
+    """
+    API para fazer a listagem de artigos criados
+    """
     renderer_classes = [JSONRenderer]
 
     def get(self, request):
@@ -48,6 +54,9 @@ class ArticleListAPIView(APIView):
         return Response(serializer.data)
 
 class ArticleDetailAPIView(APIView):
+    """
+    API para pegar o artigo e seus detalhes para a visualização única dele
+    """
     renderer_classes = [JSONRenderer]
 
     def get(self, request, pk):

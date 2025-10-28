@@ -46,7 +46,7 @@ function Home() {
                 </h5>
                 <ul className="list-unstyled mb-0 text-secondary">
                   <li className="mb-2">💻 <b>Backend:</b> Django + Django REST Framework</li>
-                  <li className="mb-2">🤖 <b>Multiagentes:</b> CrewAI + CrewAI Tools + LangChain</li>
+                  <li className="mb-2">🤖 <b>Multiagentes:</b> CrewAI + CrewAI Tools</li>
                   <li className="mb-2">🧠 <b>LLMs:</b> GPT 4-o-mini</li>
                   <li className="mb-2">📚 <b>Fonte de dados:</b> API da Wikipedia</li>
                   <li className="mb-2">⚛️ <b>Frontend:</b> React + Vite + Bootstrap</li>
@@ -57,33 +57,6 @@ function Home() {
           </div>
         </div>
 
-        <div className="card shadow-sm rounded-4 mt-5 border-0 hover-card">
-          <div className="card-body">
-            <h5 className="card-title fw-bold mb-3 text-primary">🔗 Links Úteis</h5>
-            <ul className="list-unstyled mb-0">
-              <li className="mb-2">
-                📘 <a href="https://docs.crewai.com/introduction" target="_blank" rel="noreferrer">
-                  Documentação CrewAI
-                </a>
-              </li>
-              <li className="mb-2">
-                🧩 <a href="https://docs.crewai.com/concepts/tools" target="_blank" rel="noreferrer">
-                  CrewAI Tools
-                </a>
-              </li>
-              <li className="mb-2">
-                💡 <a href="https://www.promptingguide.ai/pt/techniques" target="_blank" rel="noreferrer">
-                  Engenharia de Prompts
-                </a>
-              </li>
-              <li className="mb-2">
-                🎓 <a href="https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/" target="_blank" rel="noreferrer">
-                  Curso Multi-Agentes (DeepLearning.AI)
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
       </div>
 
       <style>{`

@@ -11,12 +11,24 @@ from ..schemas import ArticleOutput, QuizQuestion
 import json
 
 def get_task_raw(tasks_output, task_description):
+    """
+    Retorna a saída da task do CrewAI
+    :param tasks_output: Outputs da task
+    :param task_description: Descrição da task
+    :return: str: Conteúdo bruto
+    """
     for t in tasks_output:
         if t.description == task_description:
             return t.raw
     return ""
 
 def generate_article_pipeline(title: str, target_language: str = "English"):
+    """
+    Gera o artigo utilizando o pipeline da wikipedia
+    :param title: Título do Artigo
+    :param target_language: Linguagem para tradução
+    :return: Pydantic formatado com a saída para a criação do objeto django 
+    """
     fetch_task = Task(
         description=(
             f"Pesquise informações sobre o tópico '{title}' na Wikipedia em português. "
